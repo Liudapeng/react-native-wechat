@@ -7,7 +7,7 @@
 //
 
 #import "WXImageScale.h"
-#
+
 @implementation WXImageScale
 
 

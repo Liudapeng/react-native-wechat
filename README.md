@@ -1,7 +1,7 @@
 # react-native-wechat
 
-- iOS SDK VERSION 1.8.3
-- Android SDK VERSION 5.1.6
+- iOS SDK VERSION 1.8.4
+- Android SDK VERSION 5.3.1
 
 ## 安装
 

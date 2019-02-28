@@ -13,6 +13,7 @@
 		36761B5C20948051001012B9 /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36761B5820948051001012B9 /* WXApiRequestHandler.m */; };
 		36761B5D20948051001012B9 /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36761B5B20948051001012B9 /* WXApiResponseHandler.m */; };
 		36761B60209481D0001012B9 /* SendMessageToWXReq+requestWithMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36761B5F209481D0001012B9 /* SendMessageToWXReq+requestWithMessage.m */; };
+		AA98637E22280AEA00314E73 /* WXImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = AA98637C22280AEA00314E73 /* WXImageScale.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNWechat.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNWechat.m */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		36761B5B20948051001012B9 /* WXApiResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
 		36761B5E2094810A001012B9 /* SendMessageToWXReq+requestWithMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithMessage.h"; sourceTree = "<group>"; };
 		36761B5F209481D0001012B9 /* SendMessageToWXReq+requestWithMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SendMessageToWXReq+requestWithMessage.m"; sourceTree = "<group>"; };
+		AA98637C22280AEA00314E73 /* WXImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImageScale.m; sourceTree = "<group>"; };
+		AA98637D22280AEA00314E73 /* WXImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImageScale.h; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNWechat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNWechat.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNWechat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNWechat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +85,8 @@
 		36751C7E204EA21C00E6C291 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AA98637D22280AEA00314E73 /* WXImageScale.h */,
+				AA98637C22280AEA00314E73 /* WXImageScale.m */,
 				36761B5E2094810A001012B9 /* SendMessageToWXReq+requestWithMessage.h */,
 				36761B5F209481D0001012B9 /* SendMessageToWXReq+requestWithMessage.m */,
 				36761B1220946749001012B9 /* WXMediaMessage+construct.h */,
@@ -172,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36761B60209481D0001012B9 /* SendMessageToWXReq+requestWithMessage.m in Sources */,
+				AA98637E22280AEA00314E73 /* WXImageScale.m in Sources */,
 				36761B5C20948051001012B9 /* WXApiRequestHandler.m in Sources */,
 				36761B1420946760001012B9 /* WXMediaMessage+construct.m in Sources */,
 				36761B1720946ABB001012B9 /* FormatConversion.m in Sources */,
