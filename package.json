@@ -1,17 +1,17 @@
 {
-  "name": "@yyyyu/react-native-wechat",
-  "author": "yyyyu <g592842897@gmail.com>",
-  "version": "2.2.0",
+  "name": "@liudapeng/react-native-wechat",
+  "author": "liudapeng <liudapeng@outlook.com>",
+  "version": "2.2.2",
   "keywords": [
     "react-native",
     "wechat"
   ],
   "description": "react native for wechat.",
   "license": "MIT",
-  "homepage": "https://github.com/yyyyu/react-native-wechat",
+  "homepage": "https://github.com/Liudapeng/react-native-wechat",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yyyyu/react-native-wechat.git"
+    "url": "git@github.com:liudapeng/react-native-wechat.git"
   },
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "rnpm": {
     "commands": {
-      "postlink": "node node_modules/@yyyyu/react-native-wechat/scripts/postlink"
+      "postlink": "node node_modules/@liudapeng/react-native-wechat/scripts/postlink"
     }
   },
   "peerDependencies": {

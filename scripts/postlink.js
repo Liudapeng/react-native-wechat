@@ -6,12 +6,12 @@ const postlink = () => {
 
   file.fileReplace(
     projectDir + '/android/settings.gradle',
-    ':@yyyyu/react-native-wechat',
+    ':@liudapeng/react-native-wechat',
     ':react-native-wechat'
   )
   file.fileReplace(
     projectDir + '/android/app/build.gradle',
-    ':@yyyyu/react-native-wechat',
+    ':@liudapeng/react-native-wechat',
     ':react-native-wechat'
   )
 

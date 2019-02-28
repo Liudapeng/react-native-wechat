@@ -6,13 +6,13 @@
 ## 安装
 
 ```bash
-yarn add @yyyyu/react-native-wechat
+yarn add @liudapeng/react-native-wechat
 ```
 
 or
 
 ```bash
-npm install --save @yyyyu/react-native-wechat
+npm install --save @liudapeng/react-native-wechat
 ```
 
 ## 配置
@@ -22,7 +22,7 @@ npm install --save @yyyyu/react-native-wechat
 #### 1. 自动配置(推荐)
 
 ```bash
-react-native link @yyyyu/react-native-wechat
+react-native link @liudapeng/react-native-wechat
 ```
 
 如果项目**使用 Pods 管理依赖**需要在 Podfile 中添加
@@ -33,7 +33,7 @@ pod 'React', :path => '../node_modules/react-native', :subspecs => ['Dependency'
 
 #### 2. 手动配置
 
-1. 使用 Xcode 打开项目，在项目依赖目录(Libraries)下添加 node_modules 中的 @yyyyu/react-native-wechat 项目
+1. 使用 Xcode 打开项目，在项目依赖目录(Libraries)下添加 node_modules 中的 @liudapeng/react-native-wechat 项目
 2. 在 Linked Frameworks and Libraries 添加 libRNWechat.a
 ![Add code](doc/images/add-library-ios.png)
 
@@ -65,7 +65,7 @@ pod 'React', :path => '../node_modules/react-native', :subspecs => ['Dependency'
 #### 1. 自动配置(如果 IOS 已经运行过，不需要重复运行)
 
 ```bash
-react-native link @yyyyu/react-native-wechat
+react-native link @liudapeng/react-native-wechat
 ```
 
 #### 2. 手动配置
@@ -74,7 +74,7 @@ react-native link @yyyyu/react-native-wechat
 
     ```Groovy
     include ':react-native-wechat'
-    project(':react-native-wechat').projectDir = new File(rootProject.projectDir, '../node_modules/@yyyyu/react-native-wechat/android')
+    project(':react-native-wechat').projectDir = new File(rootProject.projectDir, '../node_modules/@liudapeng/react-native-wechat/android')
     ```
 
 2. 在 android/app/build.gradle 文件中依赖部分添加
@@ -213,7 +213,7 @@ react-native link @yyyyu/react-native-wechat
 ## JS API
 
 ```javascript
-import wechat from '@yyyyu/react-native-wechat'
+import wechat from '@liudapeng/react-native-wechat'
 
 wechat.registerApp({ appId: 'appId' })
   .then(res => { console.log(res) })
@@ -239,7 +239,7 @@ wechat.registerApp({ appId: 'appId' })
 1. 错误代码
 
     ```javascript
-    import { ErrCode } from '@yyyyu/react-native-wechat'
+    import { ErrCode } from '@liudapeng/react-native-wechat'
 
     console.log(ErrCode)
 
@@ -265,7 +265,7 @@ wechat.registerApp({ appId: 'appId' })
 2. 抛出错误处理方式
 
     ```javascript
-    import { WechatError } from '@yyyyu/react-native-wechat'
+    import { WechatError } from '@liudapeng/react-native-wechat'
 
     try {
       const res = await wechat.sendText({ text: 'example' })
