@@ -295,7 +295,10 @@ public class RNWechatModule extends ReactContextBaseJavaModule {
         miniprogramObject.withShareTicket = true;
 
         String realThumbString = hdThumbString.isEmpty() ? thumbString : hdThumbString;
-        Bitmap realThumb = FormatConversion.stringToBitmapWithScale(realThumbString, 500, 400);
+         
+        Bitmap cutThumb = FormatConversion.stringToBitmapWithCut(realThumbString, 5, 4);
+        Bitmap realThumb = FormatConversion.stringToBitmapWithScaleChange(cutThumb, 500, 400);
+       // Bitmap realThumb = FormatConversion.stringToBitmap(realThumbString);
 
         WXMediaMessage mediaMessage = WXMediaMessageHelper.getInstance(
                 title, description, FormatConversion.bitmapToByteArray(realThumb), miniprogramObject);

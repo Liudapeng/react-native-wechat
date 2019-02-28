@@ -1,15 +1,38 @@
 #import "FormatConversion.h"
-
+//#define YFLog(format, ...) printf("class: < %s:(%d行) > method: %s \n%s\n", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
 @implementation FormatConversion
+
+
++ (NSString *)typeForImageData:(NSData *)data
+{
+    uint8_t c;
+    [data getBytes:&c length:1];
+    switch (c)
+    {
+        case 0xFF:
+            return @"image/jpg";
+        case 0x89:
+            return @"image/png";
+        case 0x47:
+            return @"image/gif";
+        case 0x49:
+        case 0x4D:
+            return @"image/tiff";
+    }
+    return nil;
+}
 
 + (NSData *)stringToData:(NSString *)aString
 {
     NSURL *aUrl;
+//    YFLog(@"dddd----->[1111]-----%@",aString);
     if ([self isPath:aString]) {
         aUrl = [NSURL fileURLWithPath:aString];
     } else {
-        aUrl = [NSURL URLWithString:aString];
+        aUrl = [NSURL URLWithString:[aString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+//      aUrl = [NSURL URLWithString:aString];
     }
+//    YFLog(@"dddd----->[2222]-----%@",aUrl);
     
     return [NSData dataWithContentsOfURL:aUrl];
 }

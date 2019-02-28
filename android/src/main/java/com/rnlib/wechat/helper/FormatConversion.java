@@ -50,6 +50,68 @@ public final class FormatConversion {
         return resizeBitmap(result, width, height);
     }
 
+    public static Bitmap stringToBitmapWithScaleChange(Bitmap bitmap, int width, int height) {
+        //        Bitmap result = null;
+        //
+        //        if (isPath(string)) {
+        //            result = BitmapFactory.decodeFile(string);
+        //        } else if (isBase64String(string)) {
+        //            String parseString = string.substring(string.indexOf(",") + 1);
+        //            try {
+        //                byte[] decodeByteArray = Base64.decode(parseString, Base64.DEFAULT);
+        //                result = BitmapFactory.decodeByteArray(decodeByteArray, 0, decodeByteArray.length);
+        //            } catch (Exception ignored) {
+        //            }
+        //        } else {
+        //            try {
+        //                URL url = new URL(string);
+        //                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        //                conn.setDoInput(true);
+        //                conn.setConnectTimeout(3000);
+        //                conn.connect();
+        //                InputStream stream = conn.getInputStream();
+        //                result = BitmapFactory.decodeStream(stream);
+        //                conn.disconnect();
+        //            } catch (Exception ignored) {
+        //            }
+        //        }
+                return resizeBitmap(bitmap,width,height);
+        
+    }
+        
+    public static Bitmap stringToBitmapWithCut(String string, int cutWidth, int cutHeight) {
+        Bitmap result = null;
+        if (isPath(string)) {
+            result = BitmapFactory.decodeFile(string);
+        } else if (isBase64String(string)) {
+            String parseString = string.substring(string.indexOf(",") + 1);
+            try {
+                byte[] decodeByteArray = Base64.decode(parseString, Base64.DEFAULT);
+                result = BitmapFactory.decodeByteArray(decodeByteArray, 0, decodeByteArray.length);
+            } catch (Exception ignored) {
+            }
+        } else {
+            try {
+                URL url = new URL(string);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setDoInput(true);
+                conn.setConnectTimeout(3000);
+                conn.connect();
+                InputStream stream = conn.getInputStream();
+                result = BitmapFactory.decodeStream(stream);
+                conn.disconnect();
+            } catch (Exception ignored) {
+            }
+        }
+        int widthTrue = result.getWidth();
+        int heightTrue = result.getHeight();
+//        float scaleWidth = ((float) newWidth) / width;
+//        float scaleHeight = ((float) newHeight) / height;
+        Matrix matrix = new Matrix();
+        matrix.postScale(1, 1);
+        return Bitmap.createBitmap(result, 0, 0, widthTrue, (cutHeight*widthTrue)/cutWidth, matrix, false);
+    }
+
     public static byte[] bitmapToByteArray(Bitmap bitmap) {
         if (bitmap == null) {
             return null;

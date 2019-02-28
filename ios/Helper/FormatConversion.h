@@ -5,6 +5,8 @@
 
 @interface FormatConversion : NSObject
 
++ (NSString *)typeForImageData:(NSData *)data;
+
 + (NSData *)stringToData:(NSString *)aString;
 
 + (NSData *)uiImageToData:(UIImage *)anUIImage;
