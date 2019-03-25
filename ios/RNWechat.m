@@ -265,32 +265,6 @@ RCT_REMAP_METHOD(sendMiniProgram,
 }
 
 
-
-
-
-
-#pragma Pay
-
-RCT_REMAP_METHOD(pay,
-                 payWithAppId:(NSString *)anAppId
-                 partnerId:(NSString *)aPartnerId
-                 prepayId:(NSString *)aPrepayId
-                 nonceStr:(NSString *)aNonceStr
-                 timeStamp:(nonnull NSNumber *)aTimeStamp
-                 package:(NSString *)aPackage
-                 sign:(NSString *)aSign
-                 resolver:(RCTPromiseResolveBlock)resolve
-                 rejecter:(RCTPromiseRejectBlock)reject)
-{
-    resolve([self getResolveResFromBool:[WXApiRequestHandler pay:aPartnerId
-                                                        prepayId:aPrepayId
-                                                        nonceStr:aNonceStr
-                                                       timeStamp:[aTimeStamp unsignedIntValue]
-                                                         package:aPackage
-                                                            sign:aSign]]);
-}
-
-
 #pragma WXApiDelegate
 
 // 发送一个sendReq后，收到微信的回应
@@ -318,13 +292,8 @@ RCT_REMAP_METHOD(pay,
         body[@"eventType"] = @"SendMessageToWXResp";
         ASSIGN_EMPTY_STRING(body[@"lang"], messageResp.lang)
         ASSIGN_EMPTY_STRING(body[@"country"], messageResp.country)
-    } else if ([resp isKindOfClass:[PayResp class]]) {
-        // 支付
-        PayResp *payResp = (PayResp *)resp;
-        body[@"eventType"] = @"PayResp";
-        ASSIGN_EMPTY_STRING(body[@"returnKey"], payResp.returnKey);
     }
-    
+  
     [self sendEvent:body];
 }
 

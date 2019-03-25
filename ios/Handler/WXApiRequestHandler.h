@@ -42,12 +42,5 @@
             description:(NSString *)aDescription
              webpageUrl:(NSString *)aWebpageUrl
              thumbImage:(NSData *)aThumbImageData;
-
-+ (BOOL)pay:(NSString *)aPartnerId
-   prepayId:(NSString *)aPrepayId
-   nonceStr:(NSString *)aNonceStr
-  timeStamp:(UInt32)aTimeStamp
-    package:(NSString *)aPackage
-       sign:(NSString *)aSign;
-
+ 
 @end

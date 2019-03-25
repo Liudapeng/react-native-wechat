@@ -151,23 +151,5 @@
 
     return [WXApi sendReq:req];
 }
-
-+ (BOOL)pay:(NSString *)aPartnerId
-   prepayId:(NSString *)aPrepayId
-   nonceStr:(NSString *)aNonceStr
-  timeStamp:(UInt32)aTimeStamp
-    package:(NSString *)aPackage
-       sign:(NSString *)aSign
-{
-    PayReq *aPayReq = [PayReq new];
-    aPayReq.partnerId = aPartnerId;
-    aPayReq.prepayId = aPrepayId;
-    aPayReq.nonceStr = aNonceStr;
-    aPayReq.timeStamp = aTimeStamp;
-    aPayReq.package = aPackage;
-    aPayReq.sign = aSign;
-
-    return [WXApi sendReq:aPayReq];
-}
-
+ 
 @end
