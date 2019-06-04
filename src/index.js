@@ -302,7 +302,8 @@ const rnWechatEventListener = listenEventType => {
     }
 
     subscription = WXEmitter.addListener('RNWechatEvent', handleWechatEvent)
-    AppState.addEventListener('change', handleAppStateChange)
+    // 暂时移除事件监听 
+    // AppState.addEventListener('change', handleAppStateChange)
   })
 }
 
